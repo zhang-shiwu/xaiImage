@@ -1,30 +1,104 @@
-# Chinese website recreation
+# xAI Image Generator
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+A Next.js application that generates images using the xAI API (Grok-2-image model). This application allows you to:
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/zhangshiwus-projects/v0-chinese-website-recreation)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/3gjrSnoo4gD)
+- Generate images from text prompts
+- Create multiple images at once (1-10)
+- Choose between URL and Base64 JSON response formats
+- View and download generated images
+- See the revised prompt used by the AI
 
-## Overview
+## Demo
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+You can see a live demo of this application [here](#) (deploy your own version to get a demo link).
 
-## Deployment
+## Deploy Your Own
 
-Your project is live at:
+Deploy your own version of this application to Vercel with one click:
 
-**[https://vercel.com/zhangshiwus-projects/v0-chinese-website-recreation](https://vercel.com/zhangshiwus-projects/v0-chinese-website-recreation)**
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyourusername%2Fxai-image-generator&env=XAI_API_KEY&envDescription=xAI%20API%20Key%20required%20for%20image%20generation&envLink=https%3A%2F%2Fx.ai)
 
-## Build your app
+## Features
 
-Continue building your app on:
+- 🖼️ Generate images from text prompts
+- 🔄 Create multiple images at once
+- 📥 Download generated images
+- 🔍 Preview images in full-screen modal
+- 📚 View and manage generation history
+- 🔒 Secure API key handling (server-side)
+- 📱 Responsive design for all devices
+- 🌓 Light and dark mode support
 
-**[https://v0.dev/chat/projects/3gjrSnoo4gD](https://v0.dev/chat/projects/3gjrSnoo4gD)**
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18.x or later
+- An xAI API key (get it from [x.ai](https://x.ai))
+
+### Installation
+
+1. Clone the repository:
+   \`\`\`bash
+   git clone https://github.com/yourusername/xai-image-generator.git
+   cd xai-image-generator
+   \`\`\`
+
+2. Install dependencies:
+   \`\`\`bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   \`\`\`
+
+3. Copy the example environment file and add your xAI API key:
+   \`\`\`bash
+   cp .env.local.example .env.local
+   \`\`\`
+   Then edit `.env.local` and add your xAI API key.
+
+4. Run the development server:
+   \`\`\`bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   \`\`\`
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
 ## How It Works
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+1. The user enters a prompt and selects options (number of images, response format)
+2. The client sends a request to the Next.js API route
+3. The API route securely forwards the request to the xAI API using the server-side API key
+4. The generated images are returned to the client and displayed
+5. Users can download the generated images
+
+## API Reference
+
+The application uses the xAI API for image generation. The API endpoint is:
+
+\`\`\`
+https://api.x.ai/v1/images/generations
+\`\`\`
+
+Parameters:
+- `model`: "grok-2-image" (the xAI image generation model)
+- `prompt`: The text prompt for image generation
+- `n`: Number of images to generate (1-10)
+- `response_format`: "url" or "b64_json"
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgements
+
+- [Next.js](https://nextjs.org/) - The React framework
+- [Tailwind CSS](https://tailwindcss.com/) - For styling
+- [shadcn/ui](https://ui.shadcn.com/) - UI components
+- [xAI](https://x.ai) - For the image generation API
