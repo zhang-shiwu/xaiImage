@@ -29,6 +29,7 @@ Deploy your own version of this application to Vercel with one click:
 - 📱 Responsive design for all devices
 - 🌓 Light and dark mode support
 
+
 ## Getting Started
 
 ### Prerequisites
@@ -36,65 +37,79 @@ Deploy your own version of this application to Vercel with one click:
 - Node.js 18.x or later
 - An xAI API key (get it from [x.ai](https://x.ai))
 
+---
+
 ### Installation
 
 1. Clone the repository:
-   \`\`\`bash
+   ```bash
    git clone https://github.com/yourusername/xai-image-generator.git
    cd xai-image-generator
-   \`\`\`
+   ```
 
 2. Install dependencies:
-   \`\`\`bash
+   ```bash
+   # Choose one of the following package managers:
    npm install
    # or
    yarn install
    # or
    pnpm install
-   \`\`\`
+   ```
 
 3. Copy the example environment file and add your xAI API key:
-   \`\`\`bash
+   ```bash
    cp .env.local.example .env.local
-   \`\`\`
+   ```
    Then edit `.env.local` and add your xAI API key.
 
 4. Run the development server:
-   \`\`\`bash
+   ```bash
+   # Choose one of the following commands:
    npm run dev
    # or
    yarn dev
    # or
    pnpm dev
-   \`\`\`
+   ```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
+---
+
 ## How It Works
 
-1. The user enters a prompt and selects options (number of images, response format)
-2. The client sends a request to the Next.js API route
-3. The API route securely forwards the request to the xAI API using the server-side API key
-4. The generated images are returned to the client and displayed
-5. Users can download the generated images
+1. The user enters a prompt and selects options (number of images, response format).
+2. The client sends a request to the Next.js API route.
+3. The API route securely forwards the request to the xAI API using the server-side API key.
+4. The generated images are returned to the client and displayed.
+5. Users can download the generated images.
+
+---
 
 ## API Reference
 
-The application uses the xAI API for image generation. The API endpoint is:
+The application uses the xAI API for image generation. The endpoint is:
+```http
+POST https://api.x.ai/v1/images/generations
+```
 
-\`\`\`
-https://api.x.ai/v1/images/generations
-\`\`\`
+### Parameters
 
-Parameters:
-- `model`: "grok-2-image" (the xAI image generation model)
-- `prompt`: The text prompt for image generation
-- `n`: Number of images to generate (1-10)
-- `response_format`: "url" or "b64_json"
+| Parameter       | Type     | Description                                                                 |
+|-----------------|----------|-----------------------------------------------------------------------------|
+| `model`         | `string` | **Required**: Must be `"grok-2-image"` (the xAI image generation model).     |
+| `prompt`        | `string` | The text prompt for image generation.                                       |
+| `n`             | `number` | Number of images to generate (range: **1–10**).                             |
+| `response_format`| `string`| Format of the response: `"url"` (image URLs) or `"b64_json"` (base64 data). |
+
+---
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
 
 ## Acknowledgements
 
