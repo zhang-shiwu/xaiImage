@@ -16,7 +16,7 @@ You can see a live demo of this application [here](#) (deploy your own version t
 
 Deploy your own version of this application to Vercel with one click:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyourusername%2Fxai-image-generator&env=XAI_API_KEY&envDescription=xAI%20API%20Key%20required%20for%20image%20generation&envLink=https%3A%2F%2Fx.ai)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fzhang-shiwu%2Fxaiimage&env=XAI_API_KEY&envDescription=xAI%20API%20Key%20required%20for%20image%20generation&envLink=https%3A%2F%2Fx.ai)
 
 ## Features
 
